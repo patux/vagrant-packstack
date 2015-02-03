@@ -82,15 +82,15 @@ CONFIG_DEBUG_MODE=n
 
 # The IP address of the server on which to install OpenStack services
 # specific to controller role such as API servers, Horizon, etc.
-CONFIG_CONTROLLER_HOST=192.168.100.11
+CONFIG_CONTROLLER_HOST=10.0.100.11
 
 # The list of IP addresses of the server on which to install the Nova
 # compute service
-CONFIG_COMPUTE_HOSTS=192.168.100.11
+CONFIG_COMPUTE_HOSTS=10.0.100.11
 
 # The list of IP addresses of the server on which to install the
 # network service such as Nova network or Neutron
-CONFIG_NETWORK_HOSTS=192.168.100.11
+CONFIG_NETWORK_HOSTS=10.0.100.11
 
 # Set to 'y' if you want to use VMware vCenter as hypervisor and
 # storage. Otherwise set to 'n'.
@@ -116,11 +116,11 @@ CONFIG_VCENTER_CLUSTER_NAME=
 # (Unsupported!) The IP address of the server on which to install
 # OpenStack services specific to storage servers such as Glance and
 # Cinder.
-CONFIG_STORAGE_HOST=192.168.100.11
+CONFIG_STORAGE_HOST=10.0.100.11
 
 # (Unsupported!) The IP address of the server on which to install
 # OpenStack services specific to Sahara
-CONFIG_SAHARA_HOST=192.168.100.11
+CONFIG_SAHARA_HOST=10.0.100.11
 
 # To subscribe each server to EPEL enter "y"
 CONFIG_USE_EPEL=n
@@ -192,7 +192,7 @@ CONFIG_SATELLITE_PROXY_PW=
 CONFIG_AMQP_BACKEND=rabbitmq
 
 # The IP address of the server on which to install the AMQP service
-CONFIG_AMQP_HOST=192.168.100.11
+CONFIG_AMQP_HOST=10.0.100.11
 
 # Enable SSL for the AMQP service
 CONFIG_AMQP_ENABLE_SSL=n
@@ -225,7 +225,7 @@ CONFIG_AMQP_AUTH_PASSWORD=PW_PLACEHOLDER
 
 # The IP address of the server on which to install MariaDB or IP
 # address of DB server to use if MariaDB installation was not selected
-CONFIG_MARIADB_HOST=192.168.100.11
+CONFIG_MARIADB_HOST=10.0.100.11
 
 # Username for the MariaDB admin user
 CONFIG_MARIADB_USER=root
@@ -243,10 +243,10 @@ CONFIG_KEYSTONE_REGION=RegionOne
 CONFIG_KEYSTONE_ADMIN_TOKEN=c69b353c177a42d3bdc7d768010f1847
 
 # The password to use for the Keystone admin user
-CONFIG_KEYSTONE_ADMIN_PW=ca8ad5a865be4870
+CONFIG_KEYSTONE_ADMIN_PW=admin
 
 # The password to use for the Keystone demo user
-CONFIG_KEYSTONE_DEMO_PW=7c91433e090c40d9
+CONFIG_KEYSTONE_DEMO_PW=demo
 
 # Kestone token format. Use either UUID or PKI
 CONFIG_KEYSTONE_TOKEN_FORMAT=UUID
@@ -438,7 +438,7 @@ CONFIG_NOVA_COMPUTE_MIGRATE_PROTOCOL=tcp
 CONFIG_NOVA_COMPUTE_MANAGER=nova.compute.manager.ComputeManager
 
 # Private interface for Flat DHCP on the Nova compute servers
-CONFIG_NOVA_COMPUTE_PRIVIF=eth2
+CONFIG_NOVA_COMPUTE_PRIVIF=lo
 
 # Nova network manager
 CONFIG_NOVA_NETWORK_MANAGER=nova.network.manager.FlatDHCPManager
@@ -447,10 +447,10 @@ CONFIG_NOVA_NETWORK_MANAGER=nova.network.manager.FlatDHCPManager
 CONFIG_NOVA_NETWORK_PUBIF=eth1
 
 # Private interface for network manager on the Nova network server
-CONFIG_NOVA_NETWORK_PRIVIF=eth2
+CONFIG_NOVA_NETWORK_PRIVIF=lo
 
 # IP Range for network manager
-CONFIG_NOVA_NETWORK_FIXEDRANGE=192.168.32.0/22
+CONFIG_NOVA_NETWORK_FIXEDRANGE=10.0.32.0/22
 
 # IP Range for Floating IP's
 CONFIG_NOVA_NETWORK_FLOATRANGE=10.3.4.0/22
@@ -665,10 +665,10 @@ CONFIG_CEILOMETER_KS_PW=aa14d9cc4b59434f
 CONFIG_CEILOMETER_COORDINATION_BACKEND=redis
 
 # The IP address of the server on which to install MongoDB
-CONFIG_MONGODB_HOST=192.168.100.11
+CONFIG_MONGODB_HOST=10.0.100.11
 
 # The IP address of the server on which to install redis
-CONFIG_REDIS_HOST=192.168.100.11
+CONFIG_REDIS_HOST=10.0.100.11
 
 # The port on which the redis server listens
 CONFIG_REDIS_PORT=6379

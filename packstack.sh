@@ -11,8 +11,9 @@ if [ "$proxy" ]; then
     echo proxy=$proxy >> /etc/yum.conf
     source /etc/environment
 fi
+
 systemctl stop NetworkManager
-yum remove -y NetworkManager
+systemctl disable NetworkManager
 /sbin/chkconfig network on
 systemctl restart network.service
 yum install -y deltarpm
@@ -22,7 +23,7 @@ yum install -y openstack-packstack
 yum install -y epel-release erlang.x86_64
 packstack -d --answer-file=/vagrant/packstack-answers-20150201-003728.txt
 # Adding cirros image
+source /etc/environment
 source /root/keystonerc_admin
 /usr/bin/wget -q -O /tmp/cirros-0.3.3-x86_64-disk.img http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img
 /usr/bin/glance image-create --name="CirrOS 0.3.3" --disk-format=qcow2 --container-format=bare --is-public=true --file /tmp/cirros-0.3.3-x86_64-disk.img
-rm /tmp/cirros-0.3.3-x86_64-disk.img
